@@ -1,7 +1,22 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
-key: h9tsp6d6swqe38jyf3f5mctv
-shared_secret: qmehMreyjg2g2q7RXvqMc5b9
+get '/commits' do
+	@user = Github.new
+  @commits = @user.repos.commits.all  'danillawafer', 'twitter1'
+  erb :commit_info
+end
+
+get '/avatars' do
+	@user = Github.new
+	@following = @user.users.followers.following 'Vise890'
+	erb :avatars
+end
+
+get '/gists' do
+	@user = Github.new
+	@gists = @user.gists.list user: 'fabianuribe'
+	p @gists
+	erb :gists
+end

@@ -1,0 +1,5 @@
+<div class="container">
+  <% @following.each do |follower| %>
+    <img src="<%= follower[:avatar_url] %>"><br>
+  <% end %>
+</div>

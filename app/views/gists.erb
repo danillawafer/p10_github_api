@@ -1,0 +1,5 @@
+<div class="container">
+  <% @gists.each do |gist| %>
+    <a href="<%= gist[:html_url] %>"><%= gist[:html_url] %></a><br>
+  <% end %>
+</div>

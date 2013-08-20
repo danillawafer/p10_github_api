@@ -1,0 +1,5 @@
+<div class="container">
+  <% @commits.each do |commit| %>
+    <a href='<%= commit[:url] %>'><%= commit[:url] %></a><br>
+  <% end %>
+</div>
